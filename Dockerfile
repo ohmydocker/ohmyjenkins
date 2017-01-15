@@ -19,4 +19,4 @@ apt-get -y autoremove ; \
 apt-get clean ; \
 rm -Rf /var/lib/apt/lists/*
 
-USER jenkins # drop back to the regular jenkins user - good practice
+USER jenkins
