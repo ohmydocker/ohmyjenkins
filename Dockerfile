@@ -19,4 +19,12 @@ apt-get -y autoremove ; \
 apt-get clean ; \
 rm -Rf /var/lib/apt/lists/*
 
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+
 USER jenkins
+
+RUN nvm install lts/boron ; \
+nvm alias default lts/boron ; \
+\curl -sSL https://get.rvm.io | bash -s stable ; \
+rvm install ruby-2.3.3 ; \
+rvm use --default ruby-2.3.3
