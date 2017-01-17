@@ -8,7 +8,7 @@ USER root
 RUN DEBIAN_FRONTEND=noninteractive \
 apt-get -qq update; apt-get -qqy dist-upgrade ; \
 apt-get -qqy --no-install-recommends install \
-build-essential nodejs perl ruby rake locales \
+build-essential nodejs npm perl ruby rake locales \
 python3-virtualenv python3-pip python-virtualenv python-pip \
 procps ca-certificates wget pwgen supervisor curl ; \
 echo 'en_US.ISO-8859-15 ISO-8859-15'>>/etc/locale.gen ; \
