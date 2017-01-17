@@ -13,7 +13,7 @@ python3-virtualenv python3-pip python-virtualenv python-pip \
 openssl libreadline6 libreadline6-dev curl zlib1g zlib1g-dev \
 libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev \
 libxslt-dev autoconf libc6-dev ncurses-dev automake libtool \
-bison subversion pkg-config gawk libgdbm-dev libffi-dev \
+xvfb bison subversion pkg-config gawk libgdbm-dev libffi-dev \
 sudo \
 procps ca-certificates wget pwgen supervisor curl ; \
 echo 'en_US.ISO-8859-15 ISO-8859-15'>>/etc/locale.gen ; \
