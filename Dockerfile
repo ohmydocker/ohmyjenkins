@@ -26,5 +26,6 @@ USER jenkins
 RUN nvm install lts/boron ; \
 nvm alias default lts/boron ; \
 \curl -sSL https://get.rvm.io | bash -s stable ; \
+source /var/jenkins_home/.rvm/scripts/rvm ; \
 rvm install ruby-2.3.3 ; \
 rvm use --default ruby-2.3.3
