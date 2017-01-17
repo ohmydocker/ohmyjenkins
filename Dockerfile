@@ -14,19 +14,24 @@ openssl libreadline6 libreadline6-dev curl zlib1g zlib1g-dev \
 libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev \
 libxslt-dev autoconf libc6-dev ncurses-dev automake libtool \
 bison subversion pkg-config gawk libgdbm-dev libffi-dev \
+sudo \
 procps ca-certificates wget pwgen supervisor curl ; \
 echo 'en_US.ISO-8859-15 ISO-8859-15'>>/etc/locale.gen ; \
 echo 'en_US ISO-8859-1'>>/etc/locale.gen ; \
 echo 'en_US.UTF-8 UTF-8'>>/etc/locale.gen ; \
 locale-gen ; \
+gpasswd -a jenkins sudo && \
+echo '%sudo ALL=(ALL) NOPASSWD:ALL'>> /etc/sudoers && \
 apt-get -y autoremove ; \
 apt-get clean ; \
 rm -Rf /var/lib/apt/lists/*
-
-ENV ZOHMY_JENKINS 20170116
 
 USER jenkins
 
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 COPY rvmnvm.sh /usr/local/rvmnvm.sh
 RUN /bin/bash /usr/local/rvmnvm.sh
+
+USER root
+RUN apt-get remove sudo
+USER jenkins
