@@ -16,3 +16,4 @@ sudo chown jenkins. /opt
 cp -a .rvm /opt/
 cp -a .nvm /opt/
 cp .bashrc /opt/
+cp .profile /opt/
