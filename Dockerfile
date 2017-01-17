@@ -23,9 +23,5 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh
 
 USER jenkins
 
-RUN nvm install lts/boron ; \
-nvm alias default lts/boron ; \
-\curl -sSL https://get.rvm.io | bash -s stable ; \
-source /var/jenkins_home/.rvm/scripts/rvm ; \
-rvm install ruby-2.3.3 ; \
-rvm use --default ruby-2.3.3
+COPY rvmnvm.sh /usr/local/rvmnvm.sh
+RUN /bin/bash /usr/local/rvmnvm.sh
