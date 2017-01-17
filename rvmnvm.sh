@@ -11,5 +11,6 @@ source /var/jenkins_home/.rvm/scripts/rvm
 rvm requirements
 rvm install --binary $RUBY_TARGET
 rvm use --default $RUBY_TARGET
+cd /var/jenkins_home
 sudo tar zcf /opt/rvm.tgz .rvm
 sudo tar zcf /opt/nvm.tgz .nvm
