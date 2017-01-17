@@ -10,6 +10,10 @@ apt-get -qq update; apt-get -qqy dist-upgrade ; \
 apt-get -qqy --no-install-recommends install \
 build-essential nodejs npm perl ruby rake locales \
 python3-virtualenv python3-pip python-virtualenv python-pip \
+openssl libreadline6 libreadline6-dev curl zlib1g zlib1g-dev \
+libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev \
+libxslt-dev autoconf libc6-dev ncurses-dev automake libtool \
+bison subversion pkg-config gawk libgdbm-dev libffi-dev \
 procps ca-certificates wget pwgen supervisor curl ; \
 echo 'en_US.ISO-8859-15 ISO-8859-15'>>/etc/locale.gen ; \
 echo 'en_US ISO-8859-1'>>/etc/locale.gen ; \
@@ -19,9 +23,10 @@ apt-get -y autoremove ; \
 apt-get clean ; \
 rm -Rf /var/lib/apt/lists/*
 
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+ENV ZOHMY_JENKINS 20170116
 
 USER jenkins
 
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 COPY rvmnvm.sh /usr/local/rvmnvm.sh
 RUN /bin/bash /usr/local/rvmnvm.sh
