@@ -12,6 +12,7 @@ rvm requirements
 rvm install --binary $RUBY_TARGET
 rvm use --default $RUBY_TARGET
 cd /var/jenkins_home
-sudo tar zcf /opt/rvm.tgz .rvm
-sudo tar zcf /opt/nvm.tgz .nvm
+sudo chown jenkins. /opt
+cp -a .rvm /opt/
+cp -a .nvm /opt/
 cp .bashrc /opt/
