@@ -28,10 +28,9 @@ rm -Rf /var/lib/apt/lists/*
 
 USER jenkins
 
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 COPY rvmnvm.sh /usr/local/rvmnvm.sh
 RUN /bin/bash /usr/local/rvmnvm.sh
 
 USER root
-RUN apt-get remove sudo
+RUN SUDO_FORCE_REMOVE=yes apt-get remove -qqy sudo
 USER jenkins
