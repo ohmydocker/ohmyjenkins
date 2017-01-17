@@ -13,7 +13,7 @@ rvm install --binary $RUBY_TARGET
 rvm use --default $RUBY_TARGET
 cd /var/jenkins_home
 sudo chown jenkins. /opt
-cp -a .rvm /opt/
-cp -a .nvm /opt/
+mv .rvm /opt/
+mv .nvm /opt/
 cp .bashrc /opt/
 cp .profile /opt/
