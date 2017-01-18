@@ -31,8 +31,8 @@ USER jenkins
 COPY assets /assets
 RUN sudo cp /assets/rvmnvm.sh /usr/local/rvmnvm.sh && \
 /bin/bash /usr/local/rvmnvm.sh  && \
-cd /tmp/ ;curl https://github.com/rancher/rancher-compose/releases/download/v0.12.2-rc1/rancher-compose-linux-amd64-v0.12.2-rc1.tar.gz | tar zvf - && \
-cd /tmp/ ;curl https://github.com/rancher/cli/releases/download/v0.4.1/rancher-darwin-amd64-v0.4.1.tar.gz | tar zvf - && \
+cd /tmp/ ;curl https://github.com/rancher/rancher-compose/releases/download/v0.12.2-rc1/rancher-compose-linux-amd64-v0.12.2-rc1.tar.gz | tar zxf - && \
+cd /tmp/ ;curl https://github.com/rancher/cli/releases/download/v0.4.1/rancher-darwin-amd64-v0.4.1.tar.gz | tar zxf - && \
 sudo mv /tmp/rancher*/rancher /usr/local/bin/ && \
 sudo mv /tmp/rancher*/rancher-compose /usr/local/bin/ && \
 sudo chmod +x /usr/local/bin/rancher && \
