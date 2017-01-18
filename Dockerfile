@@ -29,8 +29,8 @@ rm -Rf /var/lib/apt/lists/*
 USER jenkins
 
 COPY assets /assets
-RUN /bin/bash /usr/local/rvmnvm.sh  && \
-sudo cp /assets/rvmnvm.sh /usr/local/rvmnvm.sh && \
+RUN sudo cp /assets/rvmnvm.sh /usr/local/rvmnvm.sh && \
+/bin/bash /usr/local/rvmnvm.sh  && \
 cd /usr/local/bin/ ;sudo tar zxvf /assets/rancher-linux-amd64-v0.4.1.tar.gz && \
 sudo chmod +x /usr/local/bin/rancher
 
