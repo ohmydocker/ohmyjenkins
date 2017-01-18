@@ -28,8 +28,11 @@ rm -Rf /var/lib/apt/lists/*
 
 USER jenkins
 
-COPY rvmnvm.sh /usr/local/rvmnvm.sh
-RUN /bin/bash /usr/local/rvmnvm.sh
+COPY assets /assets
+RUN /bin/bash /usr/local/rvmnvm.sh  && \
+cp /assets/rvmnvm.sh /usr/local/rvmnvm.sh && \
+cd /usr/local/bin/ ;tar zxvf /assets/rancher-linux-amd64-v0.4.1.tar.gz && \
+chmod +x /usr/local/bin/rancher
 
 USER root
 RUN SUDO_FORCE_REMOVE=yes apt-get remove -qqy sudo
