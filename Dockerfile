@@ -1,7 +1,7 @@
 FROM jenkins:latest
 MAINTAINER Josh Cox <josh 'at' webhosting.coop>
 
-ENV OHMY_JENKINS 20170114
+ENV OHMY_JENKINS 20170124
 ENV LANG en_US.UTF-8
 
 USER root
