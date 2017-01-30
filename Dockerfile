@@ -14,7 +14,7 @@ openssl libreadline6 libreadline6-dev curl zlib1g zlib1g-dev \
 libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev \
 libxslt-dev autoconf libc6-dev ncurses-dev automake libtool \
 xvfb bison subversion pkg-config gawk libgdbm-dev libffi-dev \
-sudo mongodb libfontconfig \
+rsync gzip bzip2 sudo mongodb libfontconfig \
 procps ca-certificates wget pwgen supervisor curl && \
 echo 'en_US.ISO-8859-15 ISO-8859-15'>>/etc/locale.gen && \
 echo 'en_US ISO-8859-1'>>/etc/locale.gen && \
