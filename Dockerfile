@@ -27,17 +27,9 @@ apt-get clean && \
 rm -Rf /var/lib/apt/lists/*
 
 USER jenkins
-
 COPY assets /assets
 RUN sudo cp /assets/rvmnvm.sh /usr/local/rvmnvm.sh && \
-/bin/bash /usr/local/rvmnvm.sh  && \
-mkdir -p /var/jenkins_home/tmp/mytmp && chown -R jenkins. /var/jenkins_home/tmp/mytmp && chmod 777 jenkins. /var/jenkins_home/tmp/mytmp && \
-cd /var/jenkins_home/tmp/mytmp/ ;curl -SL https://github.com/rancher/rancher-compose/releases/download/v0.12.2-rc1/rancher-compose-linux-amd64-v0.12.2-rc1.tar.gz |sudo tar -zx && \
-cd /var/jenkins_home/tmp/mytmp/ ;curl -SL https://github.com/rancher/cli/releases/download/v0.4.1/rancher-darwin-amd64-v0.4.1.tar.gz |sudo tar -zx && \
-sudo mv /var/jenkins_home/tmp/mytmp/rancher*/rancher /usr/local/bin/ && \
-sudo mv /var/jenkins_home/tmp/mytmp/rancher*/rancher-compose /usr/local/bin/ && \
-sudo chmod +x /usr/local/bin/rancher && \
-sudo chmod +x /usr/local/bin/rancher-compose
+/bin/bash /usr/local/rvmnvm.sh
 
 USER root
 RUN SUDO_FORCE_REMOVE=yes apt-get remove -qqy sudo
